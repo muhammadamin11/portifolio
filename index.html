@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/user.png">
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika:wght@300..700&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="iocn" href="svg/logo.svg">
+    <title>Portifolio</title>
+</head>
+<body>
+    <header>
+            <div class="sidebar" data-aos="fade-right" data-aos-duration="3000">
+                <div class="top">
+                    <div class="logo">
+                        <svg width="2rem" height="2rem" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M48 24.5C48 29.9369 46.1149 35.2055 42.6658 39.4083C39.2167 43.611 34.417 46.4878 29.0847 47.5485C23.7523 48.6091 18.2171 47.7881 13.4222 45.2252C8.62734 42.6623 4.86945 38.5161 2.78886 33.4931C0.70827 28.4701 0.433699 22.8811 2.01193 17.6783C3.59017 12.4756 6.92355 7.98103 11.4441 4.96048C15.9647 1.93993 21.3928 0.58027 26.8034 1.11317C32.2141 1.64608 37.2726 4.03857 41.117 7.883L38.5485 10.4515C35.2983 7.2013 31.0217 5.17862 26.4474 4.72808C21.8731 4.27755 17.284 5.42705 13.4622 7.98071C9.64035 10.5344 6.82221 14.3342 5.48792 18.7328C4.15364 23.1313 4.38577 27.8564 6.14476 32.103C7.90376 36.3496 11.0808 39.8549 15.1345 42.0217C19.1882 44.1884 23.8679 44.8826 28.376 43.9859C32.8842 43.0891 36.9419 40.657 39.8579 37.1039C42.7739 33.5508 44.3676 29.0965 44.3676 24.5H48Z" fill="white"/>
+                            <path d="M16.0158 39.8059C12.4747 37.843 9.72374 34.7131 8.23167 30.9493C6.73959 27.1856 6.59871 23.0209 7.83302 19.1649C9.06733 15.3089 11.6005 12.0002 15.0008 9.80253C18.4011 7.60485 22.4583 6.65418 26.481 7.11251C30.5037 7.57084 34.243 9.4098 37.0618 12.3161C39.8807 15.2223 41.6046 19.0161 41.9398 23.0509C42.2751 27.0857 41.201 31.1119 38.9005 34.4436C36.6 37.7752 33.2155 40.2061 29.3236 41.3221L28.578 38.7219C31.8683 37.7784 34.7297 35.7233 36.6746 32.9066C38.6195 30.0899 39.5276 26.686 39.2442 23.2749C38.9607 19.8637 37.5033 16.6564 35.1201 14.1993C32.737 11.7423 29.5757 10.1876 26.1748 9.8001C22.7739 9.41262 19.3438 10.2163 16.4691 12.0743C13.5943 13.9323 11.4527 16.7296 10.4092 19.9895C9.36571 23.2495 9.48482 26.7704 10.7463 29.9524C12.0077 33.1344 14.3334 35.7806 17.3272 37.44L16.0158 39.8059Z" fill="white"/>
+                            <path d="M24.5 12C27.392 12 30.1944 13.0027 32.4299 14.8374C34.6654 16.672 36.1957 19.225 36.7598 22.0614C37.324 24.8977 36.8873 27.842 35.524 30.3925C34.1608 32.9429 31.9554 34.9418 29.2836 36.0485C26.6118 37.1552 23.6389 37.3012 20.8715 36.4618C18.1041 35.6223 15.7133 33.8492 14.1067 31.4446C12.5 29.0401 11.7768 26.1528 12.0602 23.2748C12.3437 20.3968 13.6163 17.7061 15.6612 15.6612L17.0274 17.0274C15.2986 18.7562 14.2227 21.031 13.983 23.4642C13.7434 25.8973 14.3548 28.3383 15.7132 30.3712C17.0715 32.4041 19.0927 33.9031 21.4323 34.6128C23.772 35.3225 26.2854 35.1991 28.5442 34.2634C30.803 33.3278 32.6675 31.6379 33.8201 29.4817C34.9726 27.3254 35.3418 24.8363 34.8648 22.4383C34.3879 20.0404 33.0942 17.882 31.2042 16.3309C29.3143 14.7799 26.945 13.9321 24.5 13.9321L24.5 12Z" fill="white"/>
+                            <path d="M17.0301 20.4442C17.9684 18.7159 19.477 17.3666 21.2987 16.6259C23.1204 15.8853 25.1426 15.7992 27.0206 16.3823C28.8987 16.9655 30.5165 18.1818 31.5983 19.824C32.6801 21.4662 33.159 23.4328 32.9535 25.3885C32.7479 27.3442 31.8706 29.1682 30.471 30.5496C29.0714 31.931 27.2361 32.7844 25.2778 32.9643C23.3195 33.1443 21.3594 32.6397 19.7315 31.5364C18.1036 30.4332 16.9086 28.7997 16.3501 26.9141L17.7273 26.5062C18.1914 28.0731 19.1845 29.4306 20.5373 30.3474C21.8901 31.2642 23.519 31.6836 25.1464 31.534C26.7737 31.3845 28.2989 30.6753 29.462 29.5273C30.6251 28.3794 31.3542 26.8636 31.525 25.2384C31.6958 23.6131 31.2978 21.9789 30.3988 20.6142C29.4998 19.2495 28.1554 18.2387 26.5947 17.7541C25.034 17.2695 23.3535 17.341 21.8396 17.9565C20.3258 18.572 19.0721 19.6933 18.2924 21.1295L17.0301 20.4442Z" fill="white"/>
+                            <path d="M28.2197 27.0327C27.6337 27.8933 26.7675 28.5241 25.7687 28.8176C24.7698 29.1111 23.7001 29.0492 22.7417 28.6424C21.7834 28.2356 20.9958 27.5091 20.513 26.5867C20.0303 25.6643 19.8823 24.603 20.0943 23.5837C20.3063 22.5644 20.8652 21.6502 21.6757 20.9968C22.4862 20.3434 23.4982 19.9912 24.5393 20.0003C25.5803 20.0094 26.586 20.3791 27.385 21.0466C28.184 21.7141 28.7269 22.6379 28.921 23.6607L28.0934 23.8179C27.9356 22.9865 27.4944 22.2356 26.845 21.6931C26.1955 21.1506 25.3781 20.85 24.5319 20.8426C23.6858 20.8353 22.8632 21.1215 22.2044 21.6526C21.5456 22.1837 21.0914 22.9268 20.9191 23.7553C20.7467 24.5837 20.867 25.4463 21.2594 26.1961C21.6517 26.9458 22.2919 27.5363 23.0709 27.867C23.8498 28.1976 24.7193 28.2479 25.5312 28.0094C26.3431 27.7708 27.0471 27.2581 27.5234 26.5586L28.2197 27.0327Z" fill="white"/>
+                            <path d="M23.7068 22.1292C24.2553 21.9457 24.8504 21.9581 25.3909 22.1642C25.9313 22.3702 26.3835 22.7574 26.6705 23.2595C26.9575 23.7617 27.0615 24.3478 26.9648 24.918C26.8681 25.4883 26.5767 26.0074 26.1402 26.3868C25.7037 26.7663 25.1491 26.9826 24.5709 26.999C23.9928 27.0154 23.4268 26.8309 22.9695 26.4768C22.5122 26.1227 22.1918 25.621 22.0629 25.0571C21.934 24.4933 22.0046 23.9022 22.2627 23.3846L23.1394 23.8217C22.9825 24.1365 22.9395 24.4959 23.0179 24.8388C23.0963 25.1817 23.2911 25.4868 23.5693 25.7022C23.8474 25.9175 24.1916 26.0297 24.5431 26.0198C24.8947 26.0098 25.232 25.8782 25.4975 25.6475C25.7629 25.4167 25.9402 25.101 25.999 24.7543C26.0578 24.4075 25.9945 24.051 25.82 23.7456C25.6454 23.4403 25.3704 23.2048 25.0418 23.0795C24.7131 22.9542 24.3512 22.9467 24.0176 23.0583L23.7068 22.1292Z" fill="#fff"/>
+                            <circle cx="24.5" cy="24.5" r="0.5" transform="rotate(-180 24.5 24.5)" fill="white"/>
+                        </svg>
+                        <p>Portifolio</p>
+                    </div>
+                    <i id="btn" class="fa-solid fa-bars"></i>                     
+                </div>
+                <div class="user">
+                    <img src="images/user.jpg" class="user-img">
+                    
+                    <div>
+                        <p class="name">Muhammadamin
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"/>
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <svg width="4px" height="24px" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 9.5L.5 13H3v9h7v-6h4v6h7v-9h2.5L12 1.5l-4 4V3H4zM5 4h2v3.914l5-5L21.086 12H20v9h-5v-6H9v6H4v-9H2.914L5 9.914z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                            <span>Home</span>
+                        </a>
+                        <span class="p">Home</span>
+                    </li>
+                    <li>
+                        <a href="#aboutUs">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+                                <path class="use" stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                              </svg>
+                            <span>AboutMe</span>
+                        </a>
+                        <span class="p">AboutMe</span>
+                    </li>
+                    <li>
+                        <a href="#projects">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                
+                                <defs>
+                                    
+                                    <style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.92px;}</style>
+                                    
+                                </defs>
+                                
+                                <g id="presentation_standing" data-name="presentation standing">
+                                    
+                                    <line class="cls-1" x1="0.5" y1="1.48" x2="23.5" y2="1.48"/>
+                                    
+                                    <line class="cls-1" x1="0.5" y1="16.81" x2="23.5" y2="16.81"/>
+                                    
+                                    <rect class="cls-1" x="2.42" y="1.48" width="19.17" height="15.33"/>
+                                    
+                                    <line class="cls-1" x1="12" y1="16.81" x2="12" y2="23.52"/>
+                                    
+                                    <polyline class="cls-1" points="8.17 23.52 8.17 22.56 12 19.69"/>
+                                    
+                                    <polyline class="cls-1" points="15.83 23.52 15.83 22.56 12 19.69"/>
+                                    
+                                </g>
+                                
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                        <span class="p">Projects</span>
+                    </li>
+                    <li class="for">
+                        <a href="#technologies">
+                            <svg height="24px" width="24px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 512 512"  xml:space="preserve">
+                       <style type="text/css">
+                           .st0{fill:#ffffff;}
+                       </style>
+                       <g>
+                           <polygon class="st0 path" points="374.107,448.835 34.01,448.835 34.01,194.102 164.947,194.102 164.947,63.165 374.107,63.165 
+                               374.107,96.698 408.117,64.049 408.117,29.155 164.947,29.155 34.01,160.092 0,194.102 0,482.845 408.117,482.845 408.117,282.596 
+                               374.107,318.034 	"/>
+                           <path class="st0 path" d="M508.609,118.774l-51.325-51.325c-4.521-4.522-11.852-4.522-16.372,0L224.216,275.561
+                               c-1.344,1.344-2.336,2.998-2.889,4.815l-26.21,86.117c-2.697,8.861,5.586,17.144,14.447,14.447l88.886-27.052l210.159-218.741
+                               C513.13,130.626,513.13,123.295,508.609,118.774z M243.986,349.323l-16.877-18.447l11.698-38.447l29.139,15.678l15.682,29.145
+                               L243.986,349.323z M476.036,110.577L291.414,296.372l-11.728-11.728l185.804-184.631l10.547,10.546
+                               C476.036,110.567,476.036,110.571,476.036,110.577z"/>
+                       </g>
+                            </svg> 
+                            <span>Technologies</span>
+                        </a>
+                        <span class="p four">Technologies</span>
+                    </li>
+                </ul>
+            </div>      
+            <div class="main-content">
+                <div class="container">
+                    <nav data-aos="fade-down"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500">
+                        <div class="logoName">
+                            <h1>Fayzullayev <span>Dev</span></h1>
+                        </div>
+                        <div class="socialMedia">
+                            <a href="https://www.instagram.com/1fayzullayeevv/">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@Fayzullayev_ff">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/muhammadamin11">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+                                </svg> 
+                            </a>   
+                            <a href="https://t.me/FayzuIIaev">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    <main>
+                        <div class="texts" data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-duration="2000"
+                        data-aos-easing="ease-in-sine">
+                            <h1><span>Hello,</span> My friend</h1>
+                            <p><span>I'm</span> Muhammadamin Fayzullayev</p>
+                        </div>
+                        <div class="photo" data-aos="fade-left"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="2000">
+                            <img src="images/user.jpg" alt="">
+                        </div>
+                    </main>
+                </div>
+                <section class="position" id="aboutUs">
+                    <div class="container">
+                        <div class="top" data-aos="zoom-in">
+                            <p>Abuot Me</p>
+                            <p></p>
+                            <p>Hello Everyone, I am Muhammadamin from Samarkhand, Uzbekistan</p>
+                        </div>
+                        <div class="aboutCard">
+                            <div class="middle" data-aos="fade-right"
+                            data-aos-offset="300"
+                            data-aos-easing="ease-in-sine"
+                            data-aos-duration="1500">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.</p>
+                                <br>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.</p>
+                            </div>
+                            <div id="curve" class="card"  data-aos="fade-left"
+                            data-aos-offset="300"
+                            data-aos-easing="ease-in-sine"
+                            data-aos-duration="1500">
+                                <div class="footer">
+                                    <!-- <div class="connections">
+                                        <a href="#">
+                                            <div class="connection facebook"><div class="icon"></div></div>
+                                        </a>
+                                        <div class="connection facebook"><div class="icon"></div></div>
+                                        <div class="connection facebook"><div class="icon"></div></div>
+                                    </div> -->
+                                    <svg id="curve">
+                                        <path id="p" d="M0,200 Q80,100 400,200 V150 H0 V50" transform="translate(0 300)" />
+                                        <rect id="dummyRect" x="0" y="0" height="450" width="400"
+                                      fill="transparent" />
+                                        <!-- slide up-->
+                                        <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,100 400,50 V150 H0 V50" fill="freeze" begin="dummyRect.mouseover" end="dummyRect.mouseout" dur="0.1s" id="bounce1" />
+                                        <!-- slide up and curve in -->
+                                        <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,0 400,50 V150 H0 V50" fill="freeze" begin="bounce1.end" end="dummyRect.mouseout" dur="0.15s" id="bounce2" />
+                                        <!-- slide down and curve in -->
+                                        <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,80 400,50 V150 H0 V50" fill="freeze" begin="bounce2.end" end="dummyRect.mouseout" dur="0.15s" id="bounce3" />
+                                        <!-- slide down and curve out -->
+                                        <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,45 400,50 V150 H0 V50" fill="freeze" begin="bounce3.end" end="dummyRect.mouseout" dur="0.1s" id="bounce4" />
+                                        <!-- curve in -->
+                                        <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce4.end" end="dummyRect.mouseout" dur="0.05s" id="bounce5" />
+                            
+                                        <animate xlink:href="#p" attributeName="d" to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="dummyRect.mouseout" dur="0.15s" id="bounceOut" />
+                                    </svg>
+                                    <div class="info">
+                                        <div class="name">Muhammadamin Fayzullayev</div>
+                                        <div class="job">Frontend Developer</div>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                </section>
+                <section class="projects" id="projects">
+                    <div class="container">
+                        <div class="top" data-aos="zoom-in">
+                            <p>projects</p>
+                            <p></p>
+                            <p>You can see my best projects</p>
+                        </div>
+                        <div class="myprojects" data-aos="zoom-in-down" data-aos-duration="1500">
+                             <div class="image-wrap">
+                                <a href="https://bob-barbershop.netlify.app/" target="_blank">
+                                    <img src="images/bob.jpg" />
+                                </a>
+                            </div>
+                            <div class="image-wrap">
+                                <a href="https://network-food.netlify.app/" target="_blank">
+                                    <img src="images/food-network.jpg" />
+                                </a>
+                            </div>
+                            <div class="image-wrap">
+                                <a href="https://bob-barbershop.netlify.app/" target="_blank">
+                                    <img src="images/bob.jpg" />
+                                </a>
+                            </div>
+                            <div class="image-wrap">
+                                <a href="https://network-food.netlify.app/" target="_blank">
+                                    <img src="images/food-network.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="myprojects" style="margin-top: -50px;" data-aos="zoom-in-down" data-aos-duration="2500">
+                            <div class="image-wrap">
+                                <a href="https://network-food.netlify.app/" target="_blank">
+                                    <img src="images/food-network.jpg" />
+                                </a>
+                            </div>
+                            <div class="image-wrap">
+                               <a href="https://bob-barbershop.netlify.app/" target="_blank">
+                                   <img src="images/bob.jpg" />
+                               </a>
+                           </div>
+                           <div class="image-wrap">
+                               <a href="https://network-food.netlify.app/" target="_blank">
+                                   <img src="images/food-network.jpg" />
+                                </a>
+                            </div>
+                            <div class="image-wrap">
+                                <a href="https://bob-barbershop.netlify.app/" target="_blank">
+                                    <img src="images/bob.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                </section>
+                <section class="technologies" id="technologies">
+                    <div class="container">
+                        <div class="top" data-aos="zoom-in">
+                            <p>Technologies</p>
+                            <p></p>
+                            <p>Here is what I've known technologies</p>
+                        </div>
+                        <div class="item-cards" data-aos="zoom-in-down"  data-aos-duration="1500">
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg fill="#000000"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="120px"
+                                        height="120px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                   
+                                   <g id="c133de6af664cd4f011a55de6b000d0b">
+                                   
+                                   <path display="inline" d="M108.669,0.501h23.032v22.756h21.069V0.501h23.034V69.41h-23.032V46.334h-21.069V69.41h-23.032V0.501
+                                           H108.669z M206.091,23.353h-20.275V0.501h63.594v22.852h-20.285V69.41h-23.032V23.353H206.091z M259.502,0.501h24.02l14.771,24.213
+                                           l14.759-24.213h24.023V69.41h-22.938V35.256l-15.845,24.5h-0.395l-15.856-24.5V69.41h-22.539V0.501z M348.54,0.501h23.038v46.133
+                                           h32.391V69.41H348.54V0.501z M74.987,100.926l32.946,369.533l147.844,41.04L404.031,470.4l32.981-369.475H74.987z M368.289,188.62
+                                           l-2.063,22.977l-0.906,10.188h-0.149H256h-0.158h-63.956l4.142,46.407h59.814H256h92.98h12.214l-1.106,12.172l-10.65,119.32
+                                           l-0.682,7.652L256,433.045v0.008l-0.208,0.059l-92.839-25.774l-6.351-71.161h20.97h24.527l3.227,36.146l50.474,13.632l0.042-0.013
+                                           v-0.004l50.551-13.64l5.257-58.781H256h-0.158H154.578L143.439,188.62l-1.085-12.157h113.488H256h113.374L368.289,188.62z">
+                                   
+                                   </path>
+                                   
+                                   </g>
+                                   </svg>
+                                        <h3>HTML</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>HTML provides a means to create structured documents by denoting structural semantics for text.</p>
+                                            <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg fill="#000000"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="120px"
+                                        height="120px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                   
+                                   <g id="c133de6af664cd4f011a55de6b001a2b">
+                                   
+                                   <path display="inline" d="M204.064,46.682v22.018h-56.302V0.501h56.302v24.13h-32.172v22.051H204.064z M261.941,24.631h22.492
+                                           V0.501h-56.308c0,0,0,12.112,0,24.13c7.533,7.533,11.461,11.139,22.356,22.034c-6.369,0-22.356,0.022-22.356,0.021v22.014h56.308
+                                           V46.682L261.941,24.631z M341.746,24.631h22.49V0.501H307.93c0,0,0,12.112,0,24.13c7.531,7.533,11.461,11.139,22.355,22.034
+                                           c-6.365,0-22.355,0.022-22.355,0.021v22.014h56.307V46.682L341.746,24.631z M438.395,101.112l-34.203,370.486l-148.193,39.9
+                                           l-148.196-39.9L73.605,101.112H438.395z M369.477,176.444H255.865h-115.62l5.529,44.739h110.091h6.184l-6.184,2.574
+                                           l-106.067,44.177l3.518,43.73l102.549,0.333l54.963,0.175l-3.521,58.311l-51.442,14.484v-0.046l-0.422,0.116l-49.684-12.542
+                                           l-3.015-36.195h-0.164h-46.085h-0.162l6.032,69.876l93.5,27.649v-0.05l0.168,0.05l93-27.146L361.1,267.935H255.865h-0.26
+                                           l0.26-0.112l109.086-46.639L369.477,176.444z">
+                                   
+                                   </path>
+                                   
+                                   </g>
+                                   
+                                   </svg>
+                                        <h3>CSS</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>CSS saves a lot of work. It can control the layout of multiple web pages all at once.</p>
+                                            <a href="https://www.w3schools.com/css/css_intro.asp" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                              <svg fill="#000000"  version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="120px"
+                                    height="120px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                               
+                               <g id="5151e0c8492e5103c096af88a51e7e7e">
+                               
+                               <path display="inline" d="M218.195,257.521c0,64.719,4.624,119.1-27.309,151.283c-17.961,18.105-46.301,28.772-81.17,28.772
+                                       c-57.192,0-88.947-27.862-109.215-66.416c19.512-12.459,39.452-24.502,59.775-36.154c8.292,23.188,36.291,49.258,67.888,33.21
+                                       c20.027-10.18,17.715-41.04,17.715-74.537c0-69.549,0-149.78,0-212.528c-0.063-1.044-0.125-2.087,0.732-2.214
+                                       c23.866,0,47.728,0,71.585,0C218.195,134.832,218.195,198.069,218.195,257.521z M399.727,215.462
+                                       c-18.247-7.814-40.928-17.058-46.488-33.952c-6.233-18.934,4.396-34.533,16.231-39.841c26.023-11.688,57.038,7.556,63.463,27.301
+                                       c19.583-11.657,39.103-23.384,56.826-36.896c-20.826-34.584-51.354-59.342-107.003-57.561
+                                       c-30.64,0.979-53.657,10.652-70.841,25.088c-16.771,14.085-29.721,33.854-31.737,61.989
+                                       c-6.025,84.212,56.988,105.708,110.695,129.137c16.93,7.385,35.751,14.842,43.54,29.517c16.061,30.282-12.389,50.26-36.898,52.397
+                                       c-39.336,3.427-65.858-19.587-81.175-43.54c-19.133,11.86-39.938,22.045-58.298,34.683c25.537,44.908,67.409,73.98,132.831,73.793
+                                       c66.74-0.188,116.219-32.366,120.281-92.977C516.677,262.216,454.956,239.105,399.727,215.462z">
+                               
+                               </path>
+                               
+                               </g>
+                               
+                               </svg>
+                                        <h3>JS</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.</p>
+                                            <a href="https://w3schools.com/whatis/whatis_js.asp" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg fill="#000000" width="120px" height="120px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><title>Tailwind CSS icon</title><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
+                                        <h3>TAILWIND</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Tailwind CSS is an open-source CSS framework.</p>
+                                            <a href="https://tailwindcss.com/" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-cards" data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom"  data-aos-duration="2500">
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg fill="#000000" width="120px" height="120px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <title>git</title>
+                                            <path d="M30.428 14.663l-13.095-13.094c-0.35-0.349-0.833-0.565-1.367-0.565s-1.017 0.216-1.367 0.565l0-0-2.713 2.718 3.449 3.449c0.22-0.077 0.473-0.121 0.737-0.121 1.269 0 2.297 1.028 2.297 2.297 0 0.269-0.046 0.526-0.131 0.766l0.005-0.016 3.322 3.324c0.222-0.079 0.479-0.125 0.746-0.125 1.268 0 2.296 1.028 2.296 2.296s-1.028 2.296-2.296 2.296c-1.268 0-2.296-1.028-2.296-2.296 0-0.313 0.063-0.611 0.176-0.883l-0.006 0.015-3.11-3.094v8.154c0.764 0.385 1.279 1.163 1.279 2.061 0 1.27-1.030 2.3-2.3 2.3s-2.3-1.030-2.3-2.3c0-0.634 0.256-1.207 0.671-1.623l-0 0c0.211-0.211 0.462-0.382 0.741-0.502l0.015-0.006v-8.234c-0.842-0.354-1.422-1.173-1.422-2.126 0-0.32 0.065-0.624 0.183-0.901l-0.006 0.015-3.389-3.405-8.98 8.974c-0.348 0.351-0.562 0.834-0.562 1.368s0.215 1.017 0.563 1.368l13.096 13.092c0.349 0.35 0.832 0.566 1.366 0.566s1.016-0.216 1.366-0.566l13.034-13.034c0.35-0.349 0.567-0.833 0.567-1.366s-0.217-1.017-0.567-1.366l-0-0z"></path>
+                                        </svg>
+                                        <h3>GIT</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Git is a mature, actively maintained open source project originally developed in 2005 by Linus Torvalds.</p>
+                                            <a href="https://docs.github.com/en/get-started/using-git/about-git" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg width="120px" height="120px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+                                            <title>github [#142]</title>
+                                            <desc>Created with Sketch.</desc>
+                                            <defs>
+                                        
+                                        </defs>
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000">
+                                                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                        <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]">
+                                        
+                                        </path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <h3>GITHUB</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>GitHub is a code hosting platform for collaboration and version control.</p>
+                                            <a href="https://www.w3schools.com/whatis/whatis_github.asp">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg width="120px" height="120px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H15V15H0V0ZM10 6C8.89543 6 8 6.89543 8 8C8 9.10457 8.89543 10 10 10H11C11.5523 10 12 10.4477 12 11C12 11.5523 11.5523 12 11 12H10C9.44772 12 9 11.5523 9 11H8C8 12.1046 8.89543 13 10 13H11C12.1046 13 13 12.1046 13 11C13 9.89543 12.1046 9 11 9H10C9.44772 9 9 8.55228 9 8C9 7.44772 9.44772 7 10 7H11.1667C11.6269 7 12 7.3731 12 7.83333V8H13V7.83333C13 6.82081 12.1792 6 11.1667 6H10ZM3 6H8V7H6V13H5V7H3V6Z" fill="#000000"/>
+                                            </svg>
+                                        <h3>TS</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>TypeScript is a syntactic superset of JavaScript which adds static typing.</p>
+                                            <a href="https://www.w3schools.com/typescript/typescript_intro.php" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <svg width="120px" height="120px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <title>react</title>
+                                            <rect width="24" height="24" fill="none"/>
+                                            <path d="M12,10.11A1.87,1.87,0,1,1,10.13,12,1.88,1.88,0,0,1,12,10.11M7.37,20c.63.38,2-.2,3.6-1.7a24.22,24.22,0,0,1-1.51-1.9A22.7,22.7,0,0,1,7.06,16c-.51,2.14-.32,3.61.31,4m.71-5.74-.29-.51a7.91,7.91,0,0,0-.29.86c.27.06.57.11.88.16l-.3-.51m6.54-.76.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17,9,12.6,9,12,9s-1.17,0-1.71,0c-.29.47-.61.94-.91,1.47L8.57,12l.81,1.5c.3.53.62,1,.91,1.47.54,0,1.11,0,1.71,0s1.17,0,1.71,0c.29-.47.61-.94.91-1.47M12,6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0,10.44c.19-.22.39-.45.59-.72H11.41c.2.27.4.5.59.72M16.62,4c-.62-.38-2,.2-3.59,1.7a24.22,24.22,0,0,1,1.51,1.9,22.7,22.7,0,0,1,2.4.36c.51-2.14.32-3.61-.32-4m-.7,5.74.29.51a7.91,7.91,0,0,0,.29-.86c-.27-.06-.57-.11-.88-.16l.3.51m1.45-7c1.47.84,1.63,3.05,1,5.63,2.54.75,4.37,2,4.37,3.68s-1.83,2.93-4.37,3.68c.62,2.58.46,4.79-1,5.63s-3.45-.12-5.37-1.95c-1.92,1.83-3.91,2.79-5.38,1.95s-1.62-3-1-5.63c-2.54-.75-4.37-2-4.37-3.68S3.08,9.07,5.62,8.32c-.62-2.58-.46-4.79,1-5.63s3.46.12,5.38,1.95c1.92-1.83,3.91-2.79,5.37-1.95M17.08,12A22.51,22.51,0,0,1,18,14.26c2.1-.63,3.28-1.53,3.28-2.26S20.07,10.37,18,9.74A22.51,22.51,0,0,1,17.08,12M6.92,12A22.51,22.51,0,0,1,6,9.74c-2.1.63-3.28,1.53-3.28,2.26S3.93,13.63,6,14.26A22.51,22.51,0,0,1,6.92,12m9,2.26-.3.51c.31,0,.61-.1.88-.16a7.91,7.91,0,0,0-.29-.86l-.29.51M13,18.3c1.59,1.5,3,2.08,3.59,1.7s.83-1.82.32-4a22.7,22.7,0,0,1-2.4.36A24.22,24.22,0,0,1,13,18.3M8.08,9.74l.3-.51c-.31,0-.61.1-.88.16a7.91,7.91,0,0,0,.29.86l.29-.51M11,5.7C9.38,4.2,8,3.62,7.37,4s-.82,1.82-.31,4a22.7,22.7,0,0,1,2.4-.36A24.22,24.22,0,0,1,11,5.7Z"/>
+                                          </svg>
+                                        <h3>REACT</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>React is a tool for building UI components and a User Interface (UI) library.</p>
+                                            <a href="https://www.w3schools.com/whatis/whatis_react.asp" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <div class="container" data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom">
+                        <p>©2024 STARTUP, DESIDNED BY MUHAMMADAMIN</p>
+                          <div class="socialMedia">
+                            <a href="https://www.instagram.com/1fayzullayeevv/">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@Fayzullayev_ff">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/muhammadamin11">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+                                </svg> 
+                            </a>   
+                            <a href="https://t.me/FayzuIIaev">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </header>
+</body>
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+    
+    btn.onclick = function () {
+        sidebar.classList.toggle('active');  
+    } 
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</html>
